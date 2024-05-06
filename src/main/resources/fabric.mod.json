@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "ex_portals",
+  "version": "${version}",
+  "name": "Ex_portals",
+  "description": "",
+  "authors": [
+    "KrabovayPolochka"
+  ],
+  "contact": {
+    "repo": "https://github.com/krabovaypolochka/Ex_portalsFabric"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/ex_portals/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+    ],
+    "main": [
+      "org.kp.ex_portals.Ex_portals"
+    ]
+  },
+  "mixins": [
+    "ex_portals.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
