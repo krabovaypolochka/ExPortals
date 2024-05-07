@@ -1,5 +1,7 @@
 {
   "item.ex_portals.rift_shard": "Rift shard",
   "block.ex_portals.rift_stone": "Rift stone",
+  "block.ex_portals.rift_cobblestone": "Rift cobblestone",
+  "block.ex_portals.stable_portal_transm" : "Stable portaltransm",
   "itemgroup.ex_portals.riftitemsgroup": "Rift"
 }

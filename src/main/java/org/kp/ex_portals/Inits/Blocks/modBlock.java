@@ -12,15 +12,27 @@ import org.kp.ex_portals.Inits.Items.RiftItems;
 
 public class modBlock {
     public static final Block RiftStone = registerItem(new Block(FabricBlockSettings.create()
+                    .strength(2.0f)
                     .requiresTool()
-                    .hardness(3)
-                    .resistance(4))
-
+                    .hardness(2.0f)
+                    .resistance(2.0f))
             ,"rift_stone");
+    public static final Block RiftCobblestone = registerItem(new Block(FabricBlockSettings.create()
+                    .strength(1.0f)
+                    .requiresTool()
+                    .hardness(1.0f)
+                    .resistance(2.0f))
+            ,"rift_cobblestone");
+    public static final Block StablePortalTransm = registerItem(new Block(FabricBlockSettings.create()
+                    .strength(1.0f)
+                    .requiresTool()
+                    .hardness(1.0f)
+                    .resistance(2.0f))
+            ,"stable_portal_transm");
 
 
     public static Block registerItem(Block block, String ID){
-        RiftItems.registerItem(new BlockItem(block,new FabricItemSettings()),"rift_stone");
+        RiftItems.registerItem(new BlockItem(block,new FabricItemSettings()),ID);
         return Registry.register(Registries.BLOCK,
                 new Identifier(Ex_portals.ModID,ID),block);
     }

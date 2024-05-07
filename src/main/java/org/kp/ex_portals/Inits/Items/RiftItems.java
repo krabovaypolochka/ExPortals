@@ -11,7 +11,10 @@ import org.kp.ex_portals.Ex_portals;
 import org.kp.ex_portals.Inits.Blocks.modBlock;
 
 public class RiftItems {
-    public static Item RiftShard = registerItem(new Item(new FabricItemSettings()),
+    public static Item RiftShard = registerItem(new Item(new FabricItemSettings()
+                    .fireproof()
+                    .maxCount(8)
+            ),
             "rift_shard");
     public static Item registerItem(Item item,String ID){
         return Registry.register(Registries.ITEM,
@@ -24,6 +27,8 @@ public class RiftItems {
             .entries((context_, entries) -> {
                 entries.add(RiftShard);
                 entries.add(modBlock.RiftStone.asItem());
+                entries.add(modBlock.RiftCobblestone.asItem());
+                entries.add(modBlock.StablePortalTransm.asItem());
             })
             .build();
     public static void register() {

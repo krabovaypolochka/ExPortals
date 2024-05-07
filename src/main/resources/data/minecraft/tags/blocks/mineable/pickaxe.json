@@ -1,0 +1,8 @@
+{
+  "replace" : "false",
+  "values": [
+    "ex_portals:rift_stone",
+    "ex_portals:rift_cobblestone",
+    "ex_portals:stable_portal_transm"
+  ]
+}
