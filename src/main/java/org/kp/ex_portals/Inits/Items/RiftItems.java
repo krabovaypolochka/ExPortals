@@ -16,6 +16,12 @@ public class RiftItems {
                     .maxCount(8)
             ),
             "rift_shard");
+    public static Item ProccesedRiftShard = registerItem(new Item(new FabricItemSettings()
+            .fireproof()
+            .maxCount(24)),"proccesed_rift_shard");
+
+
+
     public static Item registerItem(Item item,String ID){
         return Registry.register(Registries.ITEM,
                 new Identifier(Ex_portals.ModID,ID),item);
@@ -26,6 +32,7 @@ public class RiftItems {
             .displayName(Text.translatable("itemgroup.ex_portals.riftitemsgroup"))
             .entries((context_, entries) -> {
                 entries.add(RiftShard);
+                entries.add(ProccesedRiftShard);
                 entries.add(modBlock.RiftStone.asItem());
                 entries.add(modBlock.RiftCobblestone.asItem());
                 entries.add(modBlock.StablePortalTransm.asItem());

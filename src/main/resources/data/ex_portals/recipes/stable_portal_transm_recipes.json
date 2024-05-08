@@ -1,0 +1,19 @@
+{
+  "type" : "minecraft:crafting_shapeless",
+  "category" : "building",
+  "ingredients": [
+    {"item" : "ex_portals:rift_shard"},
+    {"item" : "ex_portals:rift_shard"},
+    {"item" : "ex_portals:rift_shard"},
+    {"item" : "ex_portals:rift_shard"},
+    {"item" : "ex_portals:rift_shard"},
+    {"item" : "ex_portals:rift_shard"},
+    {"item" : "ex_portals:rift_shard"},
+    {"item" : "ex_portals:rift_shard"},
+    {"item" : "ex_portals:rift_shard"}
+  ],
+  "result": {
+    "count" : 1,
+    "item" : "ex_portals:stable_portal_transm"
+  }
+}
