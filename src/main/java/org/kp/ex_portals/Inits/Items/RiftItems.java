@@ -9,6 +9,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.kp.ex_portals.Ex_portals;
 import org.kp.ex_portals.Inits.Blocks.modBlock;
+import org.kp.ex_portals.Inits.Items.custome.RiftCleanerItem;
 
 public class RiftItems {
     public static Item RiftShard = registerItem(new Item(new FabricItemSettings()
@@ -19,6 +20,11 @@ public class RiftItems {
     public static Item ProccesedRiftShard = registerItem(new Item(new FabricItemSettings()
             .fireproof()
             .maxCount(24)),"proccesed_rift_shard");
+    public static Item BaseRiftingCleaner = registerItem(new RiftCleanerItem(new FabricItemSettings()
+                    .fireproof()
+                    .maxCount(1),100)
+    ,"base_rift_cleaner");
+    public static Item RiftedFlesh = registerItem(new Item(new FabricItemSettings().fireproof()), "rifted_flesh");
 
 
 
@@ -33,6 +39,8 @@ public class RiftItems {
             .entries((context_, entries) -> {
                 entries.add(RiftShard);
                 entries.add(ProccesedRiftShard);
+                entries.add(BaseRiftingCleaner);
+                entries.add(RiftedFlesh);
                 entries.add(modBlock.RiftStone.asItem());
                 entries.add(modBlock.RiftCobblestone.asItem());
                 entries.add(modBlock.StablePortalTransm.asItem());

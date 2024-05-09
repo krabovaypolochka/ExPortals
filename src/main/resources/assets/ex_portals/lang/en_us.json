@@ -1,6 +1,8 @@
 {
   "item.ex_portals.rift_shard": "Rift shard",
   "item.ex_portals.proccesed_rift_shard": "Proccesed rift shard",
+  "item.ex_portals.base_rift_cleaner" : "Base rifting cleaner",
+  "item.ex_portals.rifted_flesh" : "Rifted flesh",
   "block.ex_portals.rift_stone": "Rift stone",
   "block.ex_portals.rift_cobblestone": "Rift cobblestone",
   "block.ex_portals.stable_portal_transm" : "Stable portaltransm",
