@@ -4,6 +4,7 @@
   "package": "org.kp.ex_portals.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "BaseMixin"
   ],
   "client": [
   ],

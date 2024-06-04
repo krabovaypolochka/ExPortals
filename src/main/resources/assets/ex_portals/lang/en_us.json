@@ -3,8 +3,14 @@
   "item.ex_portals.proccesed_rift_shard": "Proccesed rift shard",
   "item.ex_portals.base_rift_cleaner" : "Base rifting cleaner",
   "item.ex_portals.rifted_flesh" : "Rifted flesh",
+  "item.ex_portals.rift_seeker_helmet" : "Rift seeker helmet",
+  "item.ex_portals.rift_seeker_chestplate" : "Rift seeker chestplate",
+  "item.ex_portals.rift_seeker_leggings" : "Rift seeker leggings",
+  "item.ex_portals.rift_seeker_boots" : "Rift seeker boots",
+  "block.ex_portals.rift_infuser_t1" : "rift infuser t1",
   "block.ex_portals.rift_stone": "Rift stone",
   "block.ex_portals.rift_cobblestone": "Rift cobblestone",
   "block.ex_portals.stable_portal_transm" : "Stable portaltransm",
+  "biome.ex_portals.rift_forest" : "rift_forest",
   "itemgroup.ex_portals.riftitemsgroup": "Rift"
 }

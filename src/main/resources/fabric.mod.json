@@ -15,6 +15,7 @@
   "environment": "*",
   "entrypoints": {
     "client": [
+      "org.kp.ex_portals.Ex_portalsClient"
     ],
     "main": [
       "org.kp.ex_portals.Ex_portals"

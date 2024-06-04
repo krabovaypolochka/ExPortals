@@ -3,8 +3,14 @@
   "item.ex_portals.proccesed_rift_shard": "обработыный осколок разлома",
   "item.ex_portals.base_rift_cleaner" : "базовый отчиститель разлома",
   "item.ex_portals.rifted_flesh" : "плоть разлома",
+  "item.ex_portals.rift_seeker_helmet" : "шлем иследывателя разлома",
+  "item.ex_portals.rift_seeker_chestplate" : "нагрудник иследывателя разлома",
+  "item.ex_portals.rift_seeker_leggings" : "поножи иследывателя разлома",
+  "item.ex_portals.rift_seeker_boots" : "ботинки иследывателя разлома",
+  "block.ex_portals.rift_infuser_t1" : "впрыскиватель разлома t1",
   "block.ex_portals.rift_stone": "камень разлома",
   "block.ex_portals.rift_cobblestone" : "булыжник разлома",
   "block.ex_portals.stable_portal_transm" : "стабильный портальный",
+  "biome.ex_portals.rift_forest" : "лес разлома",
   "itemgroup.ex_portals.riftitemsgroup": "разлом"
 }
