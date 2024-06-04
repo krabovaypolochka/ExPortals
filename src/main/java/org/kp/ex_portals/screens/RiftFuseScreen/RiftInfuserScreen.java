@@ -29,10 +29,14 @@ public class RiftInfuserScreen extends HandledScreen<RiftInfuserScreenHandler> i
         int x = (width - backgroundWidth) /2;
         int y = (height - backgroundHeight) /2;
         context.drawTexture(texture,x,y,0,0,backgroundWidth,backgroundHeight);
-        renderprogressAroow(context,x,y);
+        RenderprogressArowe(context,x,y);
+        RenderRift(context,x,y);
     }
-    public void renderprogressAroow(DrawContext context,int x,int y){
-        context.drawTexture(texture,x,y,176,0,8,handler.getScaledProgress());
+    public void RenderprogressArowe(DrawContext context,int x,int y){
+        context.drawTexture(texture,x + 90,y + 25,176,0,8,handler.getScaledProgress());
+    }
+    public void RenderRift(DrawContext context,int x,int y){
+        context.drawTexture(texture,x + 154,y + 14,176,55,10,handler.getRifting());
     }
 
     @Override

@@ -1,0 +1,11 @@
+{
+  "parent" : "block/cube",
+  "textures" : {
+    "down": "ex_portals:block/rift_wood",
+    "up": "ex_portals:block/rift_wood",
+    "north": "ex_portals:block/rift_infuser_t1",
+    "east": "ex_portals:block/rift_infuser_t1",
+    "south": "ex_portals:block/rift_infuser_t1",
+    "west": "ex_portals:block/rift_infuser_t1"
+  }
+}

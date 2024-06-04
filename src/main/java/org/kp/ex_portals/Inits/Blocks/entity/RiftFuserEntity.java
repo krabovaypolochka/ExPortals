@@ -115,6 +115,10 @@ public class RiftFuserEntity extends BlockEntity implements ExtendedScreenHandle
          this.resetprogress();
          markDirty(world,blockPos,blockState);
      }
+     if(this.getItems().get(0).getItem() == RiftItems.RiftShard){
+         this.removeStack(0,1);
+         this.RiftEnergy += 5;
+     }
     }
     private boolean hasRecipe() {
         boolean hasRawShard = this.getStack(1).getItem() == RiftItems.RiftShard;

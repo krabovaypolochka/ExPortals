@@ -1,15 +1,8 @@
 package org.kp.ex_portals;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.screen.ScreenHandlerType;
-import net.minecraft.util.Identifier;
 import org.kp.ex_portals.Inits.Blocks.modBlock;
 import org.kp.ex_portals.Inits.Items.RiftItems;
-import org.kp.ex_portals.screens.RiftFuseScreen.RiftInfuserScreen;
-import org.kp.ex_portals.screens.RiftFuseScreen.RiftInfuserScreenHandler;
 import org.kp.ex_portals.screens.screenHendlers;
 import org.kp.ex_portals.worldgen.biomes.biomeRegistration;
 import org.kp.ex_portals.worldgen.ore.ModOre;

@@ -43,7 +43,7 @@ public class RiftInfuserScreenHandler extends ScreenHandler {
     public int getRifting(){
         int max_rift = this.PROP.get(3);
         int rift = this.PROP.get(0);
-        int size = 55;
+        int size = 76;
         return max_rift != 0 && rift != 0 ? rift * size / max_rift : 0;
     }
 
