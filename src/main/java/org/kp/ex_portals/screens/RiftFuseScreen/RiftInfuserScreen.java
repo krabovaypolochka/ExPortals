@@ -33,10 +33,10 @@ public class RiftInfuserScreen extends HandledScreen<RiftInfuserScreenHandler> i
         RenderRift(context,x,y);
     }
     public void RenderprogressArowe(DrawContext context,int x,int y){
-        context.drawTexture(texture,x + 90,y + 25,176,0,8,handler.getScaledProgress());
+        context.drawTexture(texture,x + 90,y + 28,176,0,8,handler.getScaledProgress());
     }
     public void RenderRift(DrawContext context,int x,int y){
-        context.drawTexture(texture,x + 154,y + 14,176,55,10,handler.getRifting());
+        context.drawTexture(texture,x + 153,y + 13,176,47,11,handler.getRifting());
     }
 
     @Override

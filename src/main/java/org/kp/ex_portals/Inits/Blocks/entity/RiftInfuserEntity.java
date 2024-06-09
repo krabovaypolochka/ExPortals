@@ -23,35 +23,36 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import org.kp.ex_portals.Inits.Blocks.modBlock;
 import org.kp.ex_portals.Inits.Items.RiftItems;
+import org.kp.ex_portals.Inits.Items.custome.RiftCleanerItem;
 import org.kp.ex_portals.screens.RiftFuseScreen.RiftInfuserScreenHandler;
 
-public class RiftFuserEntity extends BlockEntity implements ExtendedScreenHandlerFactory, RiftInfuserInventory {
+public class RiftInfuserEntity extends BlockEntity implements ExtendedScreenHandlerFactory, RiftInfuserInventory {
     protected final PropertyDelegate propDel;
     protected int RiftEnergy = 0;
     protected int MaxRiftEnergy = 120;
     protected int progress = 0;
     protected int maxprogress = 100;
     protected final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3,ItemStack.EMPTY);
-    public RiftFuserEntity( BlockPos pos, BlockState state) {
+    public RiftInfuserEntity(BlockPos pos, BlockState state) {
         super(modBlock.Rift_Infuser_Type, pos, state);
         this.propDel = new PropertyDelegate() {
             @Override
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> RiftFuserEntity.this.RiftEnergy;
-                    case 1 -> RiftFuserEntity.this.progress;
-                    case 2 -> RiftFuserEntity.this.maxprogress;
-                    case 3 -> RiftFuserEntity.this.MaxRiftEnergy;
+                    case 0 -> RiftInfuserEntity.this.RiftEnergy;
+                    case 1 -> RiftInfuserEntity.this.progress;
+                    case 2 -> RiftInfuserEntity.this.maxprogress;
+                    case 3 -> RiftInfuserEntity.this.MaxRiftEnergy;
                     default -> 0;
                 };
             }
             @Override
             public void set(int index, int value) {
                 switch (index){
-                    case 0: RiftFuserEntity.this.RiftEnergy = value; break;
-                    case 1: RiftFuserEntity.this.progress = value;break;
-                    case 2: RiftFuserEntity.this.maxprogress = value;break;
-                    case 3: RiftFuserEntity.this.MaxRiftEnergy = value; break;
+                    case 0: RiftInfuserEntity.this.RiftEnergy = value; break;
+                    case 1: RiftInfuserEntity.this.progress = value;break;
+                    case 2: RiftInfuserEntity.this.maxprogress = value;break;
+                    case 3: RiftInfuserEntity.this.MaxRiftEnergy = value; break;
                 }
             }
             @Override
@@ -115,9 +116,12 @@ public class RiftFuserEntity extends BlockEntity implements ExtendedScreenHandle
          this.resetprogress();
          markDirty(world,blockPos,blockState);
      }
-     if(this.getItems().get(0).getItem() == RiftItems.RiftShard){
-         this.removeStack(0,1);
-         this.RiftEnergy += 5;
+     if(this.getItems().get(0).getItem().getClass() == RiftCleanerItem.class){
+         RiftCleanerItem RCI = (RiftCleanerItem)(this.getItems().get(0).getItem());
+         if(this.RiftEnergy + (RCI.GetCountC() / 2 - 10) <= MaxRiftEnergy) {
+             this.RiftEnergy += RCI.GetCountC() / 2 - 10;
+             this.removeStack(0,1);
+         }
      }
     }
     private boolean hasRecipe() {
@@ -132,7 +136,7 @@ public class RiftFuserEntity extends BlockEntity implements ExtendedScreenHandle
         return this.getStack(2).getItem().getMaxCount() > this.getStack(2).getCount() + 1;
     }
     private void CraftItem(){
-        this.RiftEnergy -= 25;
+        this.RiftEnergy -= 30;
         this.removeStack(1,1);
         this.setStack(2,new ItemStack(RiftItems.ProccesedRiftShard,this.getStack(2).getCount() + 1));
         this.resetprogress();

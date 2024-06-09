@@ -10,13 +10,13 @@ import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
-import org.kp.ex_portals.Inits.Blocks.entity.RiftFuserEntity;
+import org.kp.ex_portals.Inits.Blocks.entity.RiftInfuserEntity;
 import org.kp.ex_portals.screens.screenHendlers;
 
 public class RiftInfuserScreenHandler extends ScreenHandler {
     private final Inventory INV;
     private final PropertyDelegate PROP;
-    private final RiftFuserEntity blockEntity;
+    private final RiftInfuserEntity blockEntity;
     public RiftInfuserScreenHandler(int syncId,PlayerInventory playerInventory,PacketByteBuf buf){
         this(syncId,playerInventory,playerInventory.player.getWorld().getBlockEntity(buf.readBlockPos()), new ArrayPropertyDelegate(4));
     }
@@ -26,7 +26,7 @@ public class RiftInfuserScreenHandler extends ScreenHandler {
         this.INV = (Inventory)block;
         INV.onOpen(playerInventory.player);
         this.PROP = prop;
-        this.blockEntity =(RiftFuserEntity) block;
+        this.blockEntity =(RiftInfuserEntity) block;
         this.addSlot(new Slot(INV,0,120,38));
         this.addSlot(new Slot(INV,1,86,15));
         this.addSlot(new Slot(INV,2,86,60));
@@ -36,17 +36,15 @@ public class RiftInfuserScreenHandler extends ScreenHandler {
 
         addProperties(prop);
     }
-
     public boolean isCrafting() {
         return PROP.get(0) > 0;
     }
     public int getRifting(){
         int max_rift = this.PROP.get(3);
         int rift = this.PROP.get(0);
-        int size = 76;
+        int size = 80;
         return max_rift != 0 && rift != 0 ? rift * size / max_rift : 0;
     }
-
     public int getScaledProgress() {
         int progress = this.PROP.get(1);
         int maxProgress = this.PROP.get(2);  // Max Progress

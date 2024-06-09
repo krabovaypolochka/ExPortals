@@ -19,7 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.event.listener.GameEventListener;
 import org.jetbrains.annotations.Nullable;
-import org.kp.ex_portals.Inits.Blocks.entity.RiftFuserEntity;
+import org.kp.ex_portals.Inits.Blocks.entity.RiftInfuserEntity;
 
 public class RiftInfuserBlock extends BlockWithEntity implements BlockEntityProvider {
 
@@ -30,7 +30,7 @@ public class RiftInfuserBlock extends BlockWithEntity implements BlockEntityProv
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new RiftFuserEntity(pos,state);
+        return new RiftInfuserEntity(pos,state);
     }
 
     @Nullable
@@ -58,8 +58,8 @@ public class RiftInfuserBlock extends BlockWithEntity implements BlockEntityProv
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if(state.getBlock() != newState.getBlock()) {
-            if(world.getBlockEntity(pos) instanceof RiftFuserEntity){
-                ItemScatterer.spawn(world,pos,(RiftFuserEntity)world.getBlockEntity(pos));
+            if(world.getBlockEntity(pos) instanceof RiftInfuserEntity){
+                ItemScatterer.spawn(world,pos,(RiftInfuserEntity)world.getBlockEntity(pos));
                 world.updateComparators(pos,this);
             }
             super.onStateReplaced(state, world, pos, newState, moved);

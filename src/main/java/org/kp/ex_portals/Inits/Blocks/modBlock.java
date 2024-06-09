@@ -11,7 +11,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import org.kp.ex_portals.Ex_portals;
-import org.kp.ex_portals.Inits.Blocks.entity.RiftFuserEntity;
+import org.kp.ex_portals.Inits.Blocks.entity.RiftInfuserEntity;
 import org.kp.ex_portals.Inits.Items.RiftItems;
 
 public class modBlock {
@@ -54,7 +54,7 @@ public class modBlock {
                     .maxCount(1)
                     .rarity(Rarity.RARE)
                     .fireproof());
-    public  static final BlockEntityType<RiftFuserEntity> Rift_Infuser_Type = Registry.register(Registries.BLOCK_ENTITY_TYPE, "tutorial:demo_block_entity", FabricBlockEntityTypeBuilder.create(RiftFuserEntity::new,RIFT_INFUSER_T1).build());
+    public  static final BlockEntityType<RiftInfuserEntity> Rift_Infuser_Type = Registry.register(Registries.BLOCK_ENTITY_TYPE, "tutorial:demo_block_entity", FabricBlockEntityTypeBuilder.create(RiftInfuserEntity::new,RIFT_INFUSER_T1).build());
 
     public static Block registerItem(Block block, String ID,FabricItemSettings FIS){
         RiftItems.registerItem(new BlockItem(block,FIS),ID);

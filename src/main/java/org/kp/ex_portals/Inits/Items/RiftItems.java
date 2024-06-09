@@ -7,13 +7,13 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import org.kp.ex_portals.Ex_portals;
 import org.kp.ex_portals.Inits.Blocks.modBlock;
 import org.kp.ex_portals.Inits.Items.Armors.riff_seeker_armor.rift_seeker_armor;
 import org.kp.ex_portals.Inits.Items.custome.RiftCleanerItem;
 
-public class
-RiftItems {
+public class RiftItems {
     public static Item RiftShard = registerItem(new Item(new FabricItemSettings()
                     .fireproof()
                     .maxCount(8)
@@ -21,16 +21,39 @@ RiftItems {
             "rift_shard");
     public static Item ProccesedRiftShard = registerItem(new Item(new FabricItemSettings()
             .fireproof()
-            .maxCount(24)),"proccesed_rift_shard");
+            .maxCount(24))
+            ,"proccesed_rift_shard");
     public static Item BaseRiftingCleaner = registerItem(new RiftCleanerItem(new FabricItemSettings()
                     .fireproof()
-                    .maxCount(1),100)
+                    .maxCount(1),100,true)
     ,"base_rift_cleaner");
-    public static Item RiftedFlesh = registerItem(new Item(new FabricItemSettings().fireproof()), "rifted_flesh");
-    public static Item RiftSeekerHelmet = registerItem(new ArmorItem(new rift_seeker_armor(), ArmorItem.Type.HELMET, new FabricItemSettings()),"rift_seeker_helmet");
-    public static Item RiftSeekerLeggings = registerItem(new ArmorItem(new rift_seeker_armor(), ArmorItem.Type.LEGGINGS, new FabricItemSettings()),"rift_seeker_leggings");
-    public static Item RiftSeekerChestplate = registerItem(new ArmorItem(new rift_seeker_armor(), ArmorItem.Type.CHESTPLATE, new FabricItemSettings()),"rift_seeker_chestplate");
-    public static Item RiftSeekerBoots = registerItem(new ArmorItem(new rift_seeker_armor(), ArmorItem.Type.BOOTS, new FabricItemSettings()),"rift_seeker_boots");
+    public static Item RiftedFlesh = registerItem(new Item(new FabricItemSettings()
+            .fireproof())
+            ,"rifted_flesh");
+    public static Item RiftSeekerHelmet = registerItem(new ArmorItem(new rift_seeker_armor(), ArmorItem.Type.HELMET
+            , new FabricItemSettings()
+                    .fireproof()
+                    .rarity(Rarity.RARE)
+                    .maxCount(1))
+            ,"rift_seeker_helmet");
+    public static Item RiftSeekerLeggings = registerItem(new ArmorItem(new rift_seeker_armor(), ArmorItem.Type.LEGGINGS
+            , new FabricItemSettings()
+                    .fireproof()
+                    .rarity(Rarity.RARE)
+                    .maxCount(1))
+            ,"rift_seeker_leggings");
+    public static Item RiftSeekerChestplate = registerItem(new ArmorItem(new rift_seeker_armor(), ArmorItem.Type.CHESTPLATE
+            , new FabricItemSettings()
+                    .fireproof()
+                    .rarity(Rarity.RARE)
+                    .maxCount(1))
+            ,"rift_seeker_chestplate");
+    public static Item RiftSeekerBoots = registerItem(new ArmorItem(new rift_seeker_armor(), ArmorItem.Type.BOOTS
+            , new FabricItemSettings()
+                    .fireproof()
+                    .rarity(Rarity.RARE)
+                    .maxCount(1)),
+            "rift_seeker_boots");
 
 
     public static Item registerItem(Item item,String ID){

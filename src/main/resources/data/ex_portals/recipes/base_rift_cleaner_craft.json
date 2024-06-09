@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CR",
+    "DC"
+  ],
+  "key": {
+    "R": {
+      "item": "minecraft:echo_shard"
+    },
+    "C": {
+      "item": "ex_portals:rifted_flesh"
+    },
+    "D": {
+      "item": "ex_portals:rift_shard"
+    }
+  },
+  "result": {
+    "item": "ex_portals:base_rift_cleaner",
+    "count": 1
+  }
+}

@@ -6,10 +6,12 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.Registries;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
+import org.kp.ex_portals.Inits.Items.RiftItems;
 
 public class rift_seeker_armor implements ArmorMaterial {
-    private static int[] BASE_DURABILITY = new int[] {18,19,20,18};
-    private static int[] PROTECTION_VALUES = new int[] {4,7,8,3};
+    private static int[] BASE_DURABILITY = new int[] {2100,2100,2300,2000};
+    private static int[] PROTECTION_VALUES = new int[] {4,7,8,2};
+
 
 
     @Override
@@ -34,7 +36,7 @@ public class rift_seeker_armor implements ArmorMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(Registries.ITEM.get(Identifier.tryParse("ex_portals:proccesed_rift_shard")));
+        return Ingredient.ofItems(RiftItems.ProccesedRiftShard);
     }
 
     @Override
