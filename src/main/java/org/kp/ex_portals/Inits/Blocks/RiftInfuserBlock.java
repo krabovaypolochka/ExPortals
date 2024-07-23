@@ -36,7 +36,7 @@ public class RiftInfuserBlock extends BlockWithEntity implements BlockEntityProv
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return validateTicker(type,modBlock.Rift_Infuser_Type,(world1, pos, state1,blockEntity) -> blockEntity.tick(world1,pos,state1));
+        return validateTicker(type, RiftBlocks.Rift_Infuser_Type,(world1, pos, state1, blockEntity) -> blockEntity.tick(world1,pos,state1));
     }
 
     @Nullable

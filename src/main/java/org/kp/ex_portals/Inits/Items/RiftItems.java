@@ -9,12 +9,18 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import org.kp.ex_portals.Ex_portals;
-import org.kp.ex_portals.Inits.Blocks.modBlock;
+import org.kp.ex_portals.Inits.Blocks.RiftBlocks;
 import org.kp.ex_portals.Inits.Items.Armors.riff_seeker_armor.rift_seeker_armor;
+import org.kp.ex_portals.Inits.Items.RiftTools.RiftTools;
 import org.kp.ex_portals.Inits.Items.custome.RiftCleanerItem;
 
 public class RiftItems {
     public static Item RiftShard = registerItem(new Item(new FabricItemSettings()
+                    .food(new FoodComponent.Builder()
+                            .saturationModifier(0f)
+                            .hunger(7)
+                            .meat()
+                            .build())
                     .fireproof()
                     .maxCount(8)
             ),
@@ -28,7 +34,13 @@ public class RiftItems {
                     .maxCount(1),100,true)
     ,"base_rift_cleaner");
     public static Item RiftedFlesh = registerItem(new Item(new FabricItemSettings()
-            .fireproof())
+            .food(new FoodComponent.Builder()
+                        .saturationModifier(0.75f)
+                        .hunger(4)
+                        .meat()
+                        .build())
+                    .rarity(Rarity.UNCOMMON)
+                    .fireproof())
             ,"rifted_flesh");
     public static Item RiftSeekerHelmet = registerItem(new ArmorItem(new rift_seeker_armor(), ArmorItem.Type.HELMET
             , new FabricItemSettings()
@@ -55,7 +67,46 @@ public class RiftItems {
                     .maxCount(1)),
             "rift_seeker_boots");
 
-
+    public static Item RiftSword = registerItem(new SwordItem(
+            new RiftTools()
+                    ,6
+                    ,-2.8f
+                    ,new FabricItemSettings()
+                        .rarity(Rarity.RARE)
+                        .fireproof())
+            ,"rift_sword");
+    public static Item RiftHoe = registerItem(new HoeItem(
+                    new RiftTools()
+                    ,-1
+                    ,-2f
+                    ,new FabricItemSettings()
+                    .rarity(Rarity.RARE)
+                    .fireproof())
+            ,"rift_hoe");
+    public static Item RiftPickaxe = registerItem(new PickaxeItem(
+                    new RiftTools()
+                    ,-1
+                    ,-2f
+                    ,new FabricItemSettings()
+                    .rarity(Rarity.RARE)
+                    .fireproof())
+            ,"rift_pickaxe");
+    public static Item RiftShovel = registerItem(new ShovelItem(
+                    new RiftTools()
+                    ,-1
+                    ,-2f
+                    ,new FabricItemSettings()
+                    .rarity(Rarity.RARE)
+                    .fireproof())
+            ,"rift_shovel");
+    public static Item RiftAxe = registerItem(new ShovelItem(
+                    new RiftTools()
+                    ,-1
+                    ,-2f
+                    ,new FabricItemSettings()
+                    .rarity(Rarity.RARE)
+                    .fireproof())
+            ,"rift_axe");
     public static Item registerItem(Item item,String ID){
         return Registry.register(Registries.ITEM,
                 new Identifier(Ex_portals.ModID,ID),item);
@@ -73,10 +124,16 @@ public class RiftItems {
                 entries.add(RiftSeekerChestplate);
                 entries.add(RiftSeekerLeggings);
                 entries.add(RiftSeekerBoots);
-                entries.add(modBlock.RiftStone.asItem());
-                entries.add(modBlock.RiftCobblestone.asItem());
-                entries.add(modBlock.StablePortalTransm.asItem());
-                entries.add(modBlock.RIFT_INFUSER_T1.asItem());
+                entries.add(RiftSword);
+                entries.add(RiftAxe);
+                entries.add(RiftPickaxe);
+                entries.add(RiftShovel);
+                entries.add(RiftHoe);
+                entries.add(RiftBlocks.RiftStone.asItem());
+                entries.add(RiftBlocks.RiftCobblestone.asItem());
+                entries.add(RiftBlocks.StablePortalTransm.asItem());
+                entries.add(RiftBlocks.RIFT_INFUSER_T1.asItem());
+                entries.add(RiftBlocks.RIFT_WOOD.asItem());
             })
             .build();
     public static void register() {

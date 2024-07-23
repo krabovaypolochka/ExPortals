@@ -21,7 +21,7 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import org.kp.ex_portals.Inits.Blocks.modBlock;
+import org.kp.ex_portals.Inits.Blocks.RiftBlocks;
 import org.kp.ex_portals.Inits.Items.RiftItems;
 import org.kp.ex_portals.Inits.Items.custome.RiftCleanerItem;
 import org.kp.ex_portals.screens.RiftFuseScreen.RiftInfuserScreenHandler;
@@ -34,7 +34,7 @@ public class RiftInfuserEntity extends BlockEntity implements ExtendedScreenHand
     protected int maxprogress = 100;
     protected final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3,ItemStack.EMPTY);
     public RiftInfuserEntity(BlockPos pos, BlockState state) {
-        super(modBlock.Rift_Infuser_Type, pos, state);
+        super(RiftBlocks.Rift_Infuser_Type, pos, state);
         this.propDel = new PropertyDelegate() {
             @Override
             public int get(int index) {

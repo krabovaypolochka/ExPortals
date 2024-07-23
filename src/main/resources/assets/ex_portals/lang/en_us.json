@@ -7,10 +7,15 @@
   "item.ex_portals.rift_seeker_chestplate" : "Rift seeker chestplate",
   "item.ex_portals.rift_seeker_leggings" : "Rift seeker leggings",
   "item.ex_portals.rift_seeker_boots" : "Rift seeker boots",
-  "block.ex_portals.rift_infuser_t1" : "rift infuser t1",
+  "item.ex_portals.rift_sword" : "Rift sword",
+  "item.ex_portals.rift_pickaxe" : "Rift pickaxe",
+  "item.ex_portals.rift_hoe" : "Rift hoe",
+  "item.ex_portals.rift_shovel" : "Rift shovel",
+  "block.ex_portals.rift_infuser_t1" : "Rift infuser t1",
   "block.ex_portals.rift_stone": "Rift stone",
+  "block.ex_portals.rift_wood" : "Rift wood",
   "block.ex_portals.rift_cobblestone": "Rift cobblestone",
   "block.ex_portals.stable_portal_transm" : "Stable portaltransm",
-  "biome.ex_portals.rift_forest" : "rift_forest",
+  "biome.ex_portals.rift_forest" : "Rift_forest",
   "itemgroup.ex_portals.riftitemsgroup": "Rift"
 }
