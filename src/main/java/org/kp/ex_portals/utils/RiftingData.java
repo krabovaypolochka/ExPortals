@@ -15,9 +15,9 @@ public class RiftingData {
     public static int RemoveRifting(IDataSaver player, int amount){
         NbtCompound nbt = player.getStats();
         int rifting = nbt.getInt("rifting");
-        if(rifting - amount<=-2 )
+        if(rifting - amount < 2)
         {
-            rifting = -2;
+            rifting = 2;
         }
         else{
             rifting -= amount;
@@ -26,5 +26,9 @@ public class RiftingData {
         nbt.putInt("rifting",rifting);
 
         return rifting;
+    }
+    public static int getRifting(IDataSaver player){
+        NbtCompound nbt = player.getStats();
+        return nbt.getInt("rifting");
     }
 }

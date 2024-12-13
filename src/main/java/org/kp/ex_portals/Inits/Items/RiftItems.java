@@ -11,6 +11,7 @@ import net.minecraft.util.Rarity;
 import org.kp.ex_portals.Ex_portals;
 import org.kp.ex_portals.Inits.Blocks.RiftBlocks;
 import org.kp.ex_portals.Inits.Items.Armors.riff_seeker_armor.rift_seeker_armor;
+import org.kp.ex_portals.Inits.Items.RiftTools.RiftShieldItem;
 import org.kp.ex_portals.Inits.Items.RiftTools.RiftTools;
 import org.kp.ex_portals.Inits.Items.custome.RiftCleanerItem;
 
@@ -70,7 +71,7 @@ public class RiftItems {
     public static Item RiftSword = registerItem(new SwordItem(
             new RiftTools()
                     ,6
-                    ,-2.8f
+                    ,-2.3f
                     ,new FabricItemSettings()
                         .rarity(Rarity.RARE)
                         .fireproof())
@@ -78,7 +79,7 @@ public class RiftItems {
     public static Item RiftHoe = registerItem(new HoeItem(
                     new RiftTools()
                     ,-1
-                    ,-2f
+                    ,-3f
                     ,new FabricItemSettings()
                     .rarity(Rarity.RARE)
                     .fireproof())
@@ -86,7 +87,7 @@ public class RiftItems {
     public static Item RiftPickaxe = registerItem(new PickaxeItem(
                     new RiftTools()
                     ,-1
-                    ,-2f
+                    ,-3f
                     ,new FabricItemSettings()
                     .rarity(Rarity.RARE)
                     .fireproof())
@@ -94,7 +95,7 @@ public class RiftItems {
     public static Item RiftShovel = registerItem(new ShovelItem(
                     new RiftTools()
                     ,-1
-                    ,-2f
+                    ,-3f
                     ,new FabricItemSettings()
                     .rarity(Rarity.RARE)
                     .fireproof())
@@ -102,11 +103,17 @@ public class RiftItems {
     public static Item RiftAxe = registerItem(new ShovelItem(
                     new RiftTools()
                     ,-1
-                    ,-2f
+                    ,-3f
                     ,new FabricItemSettings()
                     .rarity(Rarity.RARE)
                     .fireproof())
             ,"rift_axe");
+    public static Item RiftGlove = registerItem(new RiftShieldItem(
+            new FabricItemSettings()
+                    .maxCount(1)
+                    .rarity(Rarity.RARE)
+                    .fireproof())
+            ,"rift_glove");
     public static Item registerItem(Item item,String ID){
         return Registry.register(Registries.ITEM,
                 new Identifier(Ex_portals.ModID,ID),item);

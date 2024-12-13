@@ -9,12 +9,12 @@
         {
           "biome": "ex_portals:rift_forest",
           "parameters": {
-            "temperature": 0,
+            "temperature": -0.2,
             "humidity": 0,
             "continentalness": 0,
             "erosion": 0,
             "weirdness": 0,
-            "depth": 0,
+            "depth": 1,
             "offset": 0
           }
         }

@@ -2,7 +2,6 @@ package org.kp.ex_portals.Inits.Blocks;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntityType;
@@ -15,6 +14,8 @@ import net.minecraft.util.Rarity;
 import org.kp.ex_portals.Ex_portals;
 import org.kp.ex_portals.Inits.Blocks.entity.RiftInfuserEntity;
 import org.kp.ex_portals.Inits.Items.RiftItems;
+
+import java.awt.*;
 
 public class RiftBlocks {
     public static final Block RiftStone = registerItem(
@@ -72,8 +73,8 @@ public class RiftBlocks {
                     .rarity(Rarity.UNCOMMON)
                     .maxCount(128));
     public static final BlockEntityType<RiftInfuserEntity> Rift_Infuser_Type = Registry.register(Registries.BLOCK_ENTITY_TYPE
-            , new Identifier(Ex_portals.ModID,"entity_block_rift_infuser")
-            , FabricBlockEntityTypeBuilder.create(RiftInfuserEntity::new,RIFT_INFUSER_T1).build());
+            , new Identifier(Ex_portals.ModID,"entity_block_rift_infuser"),
+            BlockEntityType.Builder.create(RiftInfuserEntity::new,RIFT_INFUSER_T1).build());
 
     public static Block registerItem(Block block, String ID,FabricItemSettings FIS){
         RiftItems.registerItem(new BlockItem(block,FIS),ID);
@@ -81,6 +82,5 @@ public class RiftBlocks {
                 new Identifier(Ex_portals.ModID,ID),block);
     }
     public static void sucka(){
-        Ex_portals.logger.debug("Initializing blocks");
     }
 }

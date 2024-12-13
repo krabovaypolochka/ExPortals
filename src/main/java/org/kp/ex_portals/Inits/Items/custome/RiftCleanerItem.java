@@ -30,10 +30,10 @@ public class RiftCleanerItem extends Item {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         if (isCleaning){
-            tooltip.add(Text.literal("Clear rift count:" + CountOfCleaning).formatted(Formatting.DARK_PURPLE));
+            tooltip.add(Text.literal("Clear rifting count:" + CountOfCleaning).formatted(Formatting.DARK_PURPLE));
         tooltip.add(Text.literal("            ").formatted(Formatting.ITALIC));
     }
-        tooltip.add(Text.literal("On convert in rifting:" + (CountOfCleaning / 2 - 10)).formatted(Formatting.LIGHT_PURPLE));
+        tooltip.add(Text.literal("On convert in rift energy:" + ((CountOfCleaning / 2) - (CountOfCleaning/5))).formatted(Formatting.LIGHT_PURPLE));
     }
 
     @Override

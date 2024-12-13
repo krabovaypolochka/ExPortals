@@ -77,6 +77,7 @@ public class RiftInfuserScreenHandler extends ScreenHandler {
 
         return newStack;
     }
+
     @Override
     public boolean canUse(PlayerEntity player) {
         return INV.canPlayerUse(player);

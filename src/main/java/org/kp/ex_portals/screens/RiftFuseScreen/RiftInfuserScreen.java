@@ -11,7 +11,7 @@ import net.minecraft.util.Identifier;
 import org.kp.ex_portals.Ex_portals;
 
 public class RiftInfuserScreen extends HandledScreen<RiftInfuserScreenHandler> implements ScreenHandlerProvider<RiftInfuserScreenHandler> {
-    private final Identifier texture = new Identifier(Ex_portals.ModID,"textures/gui/Rift_infusing_station_gui.png");
+    private final Identifier texture = new Identifier(Ex_portals.ModID,"textures/gui/rift_infusing_station_gui.png");
     public RiftInfuserScreen(RiftInfuserScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
     }
@@ -29,11 +29,11 @@ public class RiftInfuserScreen extends HandledScreen<RiftInfuserScreenHandler> i
         int x = (width - backgroundWidth) /2;
         int y = (height - backgroundHeight) /2;
         context.drawTexture(texture,x,y,0,0,backgroundWidth,backgroundHeight);
-        RenderprogressArowe(context,x,y);
+        RenderProgressArowe(context,x,y);
         RenderRift(context,x,y);
     }
-    public void RenderprogressArowe(DrawContext context,int x,int y){
-        context.drawTexture(texture,x + 90,y + 28,176,0,8,handler.getScaledProgress());
+    public void RenderProgressArowe(DrawContext context,int x,int y){
+        context.drawTexture(texture,x + 91,y + 32,176,0,8,handler.getScaledProgress());
     }
     public void RenderRift(DrawContext context,int x,int y){
         context.drawTexture(texture,x + 153,y + 13,176,47,11,handler.getRifting());

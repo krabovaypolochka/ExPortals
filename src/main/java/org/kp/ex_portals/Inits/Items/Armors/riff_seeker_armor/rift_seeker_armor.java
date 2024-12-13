@@ -3,16 +3,13 @@ package org.kp.ex_portals.Inits.Items.Armors.riff_seeker_armor;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.registry.Registries;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.util.Identifier;
+import net.minecraft.sound.SoundEvents;
 import org.kp.ex_portals.Inits.Items.RiftItems;
 
 public class rift_seeker_armor implements ArmorMaterial {
     private static int[] BASE_DURABILITY = new int[] {2100,2100,2300,2000};
     private static int[] PROTECTION_VALUES = new int[] {4,7,8,2};
-
-
 
     @Override
     public int getDurability(ArmorItem.Type type) {
@@ -31,7 +28,7 @@ public class rift_seeker_armor implements ArmorMaterial {
 
     @Override
     public SoundEvent getEquipSound() {
-        return SoundEvent.of(Identifier.tryParse("entity.player.breath"));
+        return SoundEvents.ITEM_ARMOR_EQUIP_GENERIC;
     }
 
     @Override

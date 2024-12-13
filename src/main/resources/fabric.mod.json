@@ -19,6 +19,9 @@
     ],
     "main": [
       "org.kp.ex_portals.Ex_portals"
+    ],
+    "terrablender": [
+      "org.kp.ex_portals.worldgen.biomes.biomeRegistration"
     ]
   },
   "mixins": [

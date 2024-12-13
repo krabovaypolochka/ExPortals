@@ -5,19 +5,20 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.biome.Biome;
 import org.kp.ex_portals.Ex_portals;
-import terrablender.api.Regions;
-import terrablender.api.SurfaceRuleManager;
-import terrablender.api.TerraBlenderApi;
+import terrablender.api.*;
 
 public class biomeRegistration implements TerraBlenderApi {
-    public static final RegistryKey<Biome> Rift_forest = registers("rift_forest",7);
+    public static final RegistryKey<Biome> Rift_forest= registers("rift_forest",8);
 
-    public static void reg(){
-        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD,Ex_portals.ModID ,addRulls.makeRules());
+    @Override
+    public void onTerraBlenderInitialized() {
+        Ex_portals.logger.debug("Adding Ex_portals biomes");
+        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD,Ex_portals.ModID,addRules.makeRules());
+        TerraBlenderApi.super.onTerraBlenderInitialized();
     }
-    private static RegistryKey<Biome> registers(String str,int weight){
-        RegistryKey<Biome> biome = RegistryKey.of(RegistryKeys.BIOME,new Identifier(Ex_portals.ModID, str));
-        Regions.register(new Regione(biome.getRegistry(),weight));
+    private static RegistryKey<Biome> registers(String str,int Weight){
+        RegistryKey<Biome> biome = RegistryKey.of(RegistryKeys.BIOME,new Identifier(Ex_portals.ModID,str));
+        Regions.register(new Regione(biome.getRegistry(),Weight));
         return biome;
     }
 }

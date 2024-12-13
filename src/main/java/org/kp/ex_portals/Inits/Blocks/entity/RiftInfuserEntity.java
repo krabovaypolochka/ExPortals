@@ -10,9 +10,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.network.listener.ClientPlayPacketListener;
-import net.minecraft.network.packet.Packet;
-import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -61,6 +58,7 @@ public class RiftInfuserEntity extends BlockEntity implements ExtendedScreenHand
             }
         };
     }
+
     @Override
     public DefaultedList<ItemStack> getItems() {
         return inventory;
@@ -79,11 +77,6 @@ public class RiftInfuserEntity extends BlockEntity implements ExtendedScreenHand
         RiftEnergy = tag.getInt("rift_energy");
         progress = tag.getInt("progress");
     }
-    @Nullable
-    @Override
-    public Packet<ClientPlayPacketListener> toUpdatePacket() {
-        return BlockEntityUpdateS2CPacket.create(this);
-    }
     @Override
     public NbtCompound toInitialChunkDataNbt() {
         return createNbt();
@@ -99,49 +92,49 @@ public class RiftInfuserEntity extends BlockEntity implements ExtendedScreenHand
     public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
         return new RiftInfuserScreenHandler(syncId,playerInventory,this,this.propDel);
     }
-    public void tick(World world, BlockPos blockPos, BlockState blockState) {
+    public static void tick(World world, BlockPos blockPos, BlockState blockState,RiftInfuserEntity entity) {
      if(world.isClient){
          return;
      }
-     if(hasRecipe()){
-         if(this.RiftEnergy >= 25){
-            this.progress++;
-            if(this.progress >= maxprogress) {
-                CraftItem();
+     if(hasRecipe(entity)){
+         if(entity.RiftEnergy >= 25){
+             entity.progress++;
+            if(entity.progress >= entity.maxprogress) {
+                CraftItem(entity);
             }
              markDirty(world,blockPos,blockState);
          }
      }
      else {
-         this.resetprogress();
+         entity.ResetProgress();
          markDirty(world,blockPos,blockState);
      }
-     if(this.getItems().get(0).getItem().getClass() == RiftCleanerItem.class){
-         RiftCleanerItem RCI = (RiftCleanerItem)(this.getItems().get(0).getItem());
-         if(this.RiftEnergy + (RCI.GetCountC() / 2 - 10) <= MaxRiftEnergy) {
-             this.RiftEnergy += RCI.GetCountC() / 2 - 10;
-             this.removeStack(0,1);
+     if(entity.getItems().get(0).getItem().getClass() == RiftCleanerItem.class){
+         RiftCleanerItem RCI = (RiftCleanerItem)(entity.getItems().get(0).getItem());
+         if(entity.RiftEnergy + (RCI.GetCountC() / 2 - 10) <= entity.MaxRiftEnergy) {
+             entity.RiftEnergy += RCI.GetCountC() / 2 - 10;
+             entity.removeStack(0,1);
          }
      }
     }
-    private boolean hasRecipe() {
-        boolean hasRawShard = this.getStack(1).getItem() == RiftItems.RiftShard;
-        return  hasRawShard && getItemCorrect(RiftItems.ProccesedRiftShard) && asCountN();
+    private static boolean hasRecipe(RiftInfuserEntity entity) {
+        boolean hasRawShard = entity.getStack(1).getItem() == RiftItems.RiftShard;
+        return  hasRawShard && getItemCorrect(RiftItems.ProccesedRiftShard,entity) && asCountN(entity);
     }
-    private boolean getItemCorrect(Item item){
-        return this.getStack(2).getItem() == item || this.getStack(2).isEmpty();
+    private static boolean getItemCorrect(Item item,RiftInfuserEntity entity){
+        return entity.getStack(2).getItem() == item || entity.getStack(2).isEmpty();
     }
 
-    private boolean asCountN() {
-        return this.getStack(2).getItem().getMaxCount() > this.getStack(2).getCount() + 1;
+    private static boolean asCountN(RiftInfuserEntity entity) {
+        return entity.getStack(2).getItem().getMaxCount() > entity.getStack(2).getCount() + 1;
     }
-    private void CraftItem(){
-        this.RiftEnergy -= 30;
-        this.removeStack(1,1);
-        this.setStack(2,new ItemStack(RiftItems.ProccesedRiftShard,this.getStack(2).getCount() + 1));
-        this.resetprogress();
+    private static void CraftItem(RiftInfuserEntity entity){
+        entity.RiftEnergy -= 30;
+        entity.removeStack(1,1);
+        entity.setStack(2,new ItemStack(RiftItems.ProccesedRiftShard,entity.getStack(2).getCount() + 1));
+        entity.ResetProgress();
     }
-    protected void resetprogress(){
+    protected void ResetProgress(){
         this.progress = 0;
     }
 
@@ -154,4 +147,5 @@ public class RiftInfuserEntity extends BlockEntity implements ExtendedScreenHand
     public void markDirty() {
         super.markDirty();
     }
+
 }
