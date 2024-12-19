@@ -14,6 +14,7 @@ import org.kp.ex_portals.Inits.Items.Armors.riff_seeker_armor.rift_seeker_armor;
 import org.kp.ex_portals.Inits.Items.RiftTools.RiftShieldItem;
 import org.kp.ex_portals.Inits.Items.RiftTools.RiftTools;
 import org.kp.ex_portals.Inits.Items.custome.RiftCleanerItem;
+import org.kp.ex_portals.Inits.liquids.LiquidRegister;
 
 public class RiftItems {
     public static Item RiftShard = registerItem(new Item(new FabricItemSettings()
@@ -114,6 +115,13 @@ public class RiftItems {
                     .rarity(Rarity.RARE)
                     .fireproof())
             ,"rift_glove");
+    public static Item Bucket_UnstablePortalTransm = registerItem(new BucketItem(LiquidRegister.UnstablePortalTransm_Still,
+            new FabricItemSettings()
+                    .rarity(Rarity.UNCOMMON)
+                    .recipeRemainder(Items.BUCKET)
+                    .maxCount(1)
+                    .fireproof()
+    ),"bucket_of_unstable_portal_transm");
     public static Item registerItem(Item item,String ID){
         return Registry.register(Registries.ITEM,
                 new Identifier(Ex_portals.ModID,ID),item);
@@ -136,6 +144,7 @@ public class RiftItems {
                 entries.add(RiftPickaxe);
                 entries.add(RiftShovel);
                 entries.add(RiftHoe);
+                entries.add(RiftGlove);
                 entries.add(RiftBlocks.RiftStone.asItem());
                 entries.add(RiftBlocks.RiftCobblestone.asItem());
                 entries.add(RiftBlocks.StablePortalTransm.asItem());

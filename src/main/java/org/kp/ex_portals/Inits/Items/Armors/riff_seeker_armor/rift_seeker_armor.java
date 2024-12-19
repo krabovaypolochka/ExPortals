@@ -9,7 +9,7 @@ import org.kp.ex_portals.Inits.Items.RiftItems;
 
 public class rift_seeker_armor implements ArmorMaterial {
     private static int[] BASE_DURABILITY = new int[] {2100,2100,2300,2000};
-    private static int[] PROTECTION_VALUES = new int[] {4,7,8,2};
+    private static int[] PROTECTION_VALUES = new int[] {4,7,6,3};
 
     @Override
     public int getDurability(ArmorItem.Type type) {

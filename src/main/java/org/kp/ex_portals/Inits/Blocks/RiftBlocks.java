@@ -72,6 +72,10 @@ public class RiftBlocks {
             ,new FabricItemSettings()
                     .rarity(Rarity.UNCOMMON)
                     .maxCount(128));
+    public static Block UnstablePortalTransmBlock = registerItem(new Block(FabricBlockSettings.copyOf(Blocks.WATER)),"unstable_portal_transm_block"
+            ,new FabricItemSettings()
+                    .rarity(Rarity.COMMON)
+    );
     public static final BlockEntityType<RiftInfuserEntity> Rift_Infuser_Type = Registry.register(Registries.BLOCK_ENTITY_TYPE
             , new Identifier(Ex_portals.ModID,"entity_block_rift_infuser"),
             BlockEntityType.Builder.create(RiftInfuserEntity::new,RIFT_INFUSER_T1).build());

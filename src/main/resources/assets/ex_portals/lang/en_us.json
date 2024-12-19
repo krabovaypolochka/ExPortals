@@ -11,6 +11,8 @@
   "item.ex_portals.rift_pickaxe" : "Rift pickaxe",
   "item.ex_portals.rift_hoe" : "Rift hoe",
   "item.ex_portals.rift_shovel" : "Rift shovel",
+  "item.ex_portals.rift_glove" : "Rift Glove",
+  "fluid.ex_portals.unstable_portal_transm" : "Unstable portaltransm",
   "block.ex_portals.rift_infuser_t1" : "Rift infuser t1",
   "block.ex_portals.rift_stone": "Rift stone",
   "block.ex_portals.rift_wood" : "Rift wood",

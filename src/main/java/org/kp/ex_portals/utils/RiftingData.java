@@ -3,18 +3,22 @@ package org.kp.ex_portals.utils;
 import net.minecraft.nbt.NbtCompound;
 
 public class RiftingData {
-    public static int addRifting(IDataSaver player, int amount){
+    public static float addRifting(IDataSaver player, float amount){
         NbtCompound nbt = player.getStats();
-        int rifting = nbt.getInt("rifting");
-        rifting += amount;
-
-        nbt.putInt("rifting",rifting);
-
+        float rifting = nbt.getInt("rifting");
+        if(rifting <= 400) {
+            rifting += amount;
+        }
+        else {
+            float R = rifting + amount - 400;
+            rifting += (amount - R);
+        }
+        nbt.putFloat("rifting", rifting);
         return rifting;
     }
-    public static int RemoveRifting(IDataSaver player, int amount){
+    public static float RemoveRifting(IDataSaver player,float amount){
         NbtCompound nbt = player.getStats();
-        int rifting = nbt.getInt("rifting");
+        float rifting = nbt.getFloat("rifting");
         if(rifting - amount < 2)
         {
             rifting = 2;
@@ -23,12 +27,12 @@ public class RiftingData {
             rifting -= amount;
         }
 
-        nbt.putInt("rifting",rifting);
+        nbt.putFloat("rifting",rifting);
 
         return rifting;
     }
-    public static int getRifting(IDataSaver player){
+    public static float getRifting(IDataSaver player){
         NbtCompound nbt = player.getStats();
-        return nbt.getInt("rifting");
+        return nbt.getFloat("rifting");
     }
 }

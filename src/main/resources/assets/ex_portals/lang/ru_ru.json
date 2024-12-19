@@ -11,11 +11,13 @@
   "item.ex_portals.rift_pickaxe" : "кирка разлома",
   "item.ex_portals.rift_hoe" : "мотыга разлома",
   "item.ex_portals.rift_shovel" : "лопата разлома",
+  "item.ex_portals.rift_glove" : "перечатка разлома",
+  "fluid.ex_portals.unstable_portal_transm" : "нестабильный порталник",
   "block.ex_portals.rift_wood" : "Дерево разлома",
   "block.ex_portals.rift_infuser_t1" : "Впрыскиватель разлома t1",
   "block.ex_portals.rift_stone": "Камень разлома",
   "block.ex_portals.rift_cobblestone" : "Булыжник разлома",
-  "block.ex_portals.stable_portal_transm" : "Стабильный портальный",
+  "block.ex_portals.stable_portal_transm" : "Стабильный портальник",
   "biome.ex_portals.rift_forest" : "Лес разлома",
   "itemgroup.ex_portals.riftitemsgroup": "Разлом"
 }

@@ -8,7 +8,7 @@ import org.kp.ex_portals.Ex_portals;
 import terrablender.api.*;
 
 public class biomeRegistration implements TerraBlenderApi {
-    public static final RegistryKey<Biome> Rift_forest= registers("rift_forest",8);
+    public static final RegistryKey<Biome> Rift_forest = registers("rift_forest",7);
 
     @Override
     public void onTerraBlenderInitialized() {

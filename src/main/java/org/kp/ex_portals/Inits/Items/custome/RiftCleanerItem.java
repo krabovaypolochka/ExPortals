@@ -33,7 +33,7 @@ public class RiftCleanerItem extends Item {
             tooltip.add(Text.literal("Clear rifting count:" + CountOfCleaning).formatted(Formatting.DARK_PURPLE));
         tooltip.add(Text.literal("            ").formatted(Formatting.ITALIC));
     }
-        tooltip.add(Text.literal("On convert in rift energy:" + ((CountOfCleaning / 2) - (CountOfCleaning/5))).formatted(Formatting.LIGHT_PURPLE));
+        tooltip.add(Text.literal("On convert in rift energy:" + ((CountOfCleaning/2)-(CountOfCleaning/5))).formatted(Formatting.LIGHT_PURPLE));
     }
 
     @Override

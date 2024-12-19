@@ -1,14 +1,17 @@
 package org.kp.ex_portals.Inits.Items.RiftTools;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ShieldItem;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import org.kp.ex_portals.Inits.StatusEffects.StatusEffectRegistry;
 import org.kp.ex_portals.utils.IDataSaver;
 import org.kp.ex_portals.utils.RiftingData;
 
@@ -19,13 +22,18 @@ public class RiftShieldItem extends ShieldItem {
     }
     @Override
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
-        if(this.ColdDown <= 0) {
+        if(this.ColdDown < 0) {
+            user.sendMessage(Text.literal("used"),true);
             Vec3d vec = user.getPos();
             Vec3d endvec = entity.getPos().add(vec.negate()).normalize();
-            entity.addVelocity(endvec.multiply(1.5f + 0.1f * RiftingData.getRifting((IDataSaver) user)));
-            this.ColdDown = 90;
+            user.sendMessage(Text.literal(String.valueOf( (2f + (0.2f * RiftingData.getRifting((IDataSaver) user))))));
+            entity.addVelocity(endvec.multiply((2f + (0.01f * RiftingData.getRifting((IDataSaver) user)))));
+            entity.damage(new DamageSource(entity.getWorld().getRegistryManager().get(RegistryKeys.DAMAGE_TYPE).entryOf(StatusEffectRegistry.Riften),user),0.1f);
+            this.ColdDown = 80;
         }
-        user.sendMessage(Text.literal("used" + this.ColdDown));
+        else{
+            user.sendMessage(Text.literal(String.valueOf(this.ColdDown)), true);
+        }
         return super.useOnEntity(stack, user, entity, hand);
     }
 
