@@ -76,7 +76,7 @@ public abstract class UnstablePortalTransm_Class extends FlowableFluid {
 
     @Override
     protected BlockState toBlockState(FluidState state) {
-        return RiftBlocks.UnstablePortalTransmBlock.getDefaultState().with(Properties.LEVEL_15, getBlockStateLevel(state));
+        return RiftBlocks.UnstablePortalTransmBlock.getDefaultState().with(Properties.LEVEL_1_8, getBlockStateLevel(state));
     }
     public static class FlowingPortalTransm extends UnstablePortalTransm_Class {
         @Override

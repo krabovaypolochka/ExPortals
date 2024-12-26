@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "ex_portals:block/rift_wood",
+    "east": "ex_portals:block/rift_infuser_t1",
+    "north": "ex_portals:block/rift_infuser_t1",
+    "particle": "ex_portals:block/rift_infuser_t1",
+    "south": "ex_portals:block/rift_infuser_t1",
+    "up": "ex_portals:block/rift_wood",
+    "west": "ex_portals:block/rift_infuser_t1"
+  }
+}

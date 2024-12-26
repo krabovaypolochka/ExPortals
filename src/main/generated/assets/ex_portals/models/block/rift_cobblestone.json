@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "ex_portals:block/rift_cobblestone"
+  }
+}

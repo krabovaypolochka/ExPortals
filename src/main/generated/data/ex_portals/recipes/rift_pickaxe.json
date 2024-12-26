@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "!": {
+      "item": "minecraft:stick"
+    },
+    "@": {
+      "item": "ex_portals:proccesed_rift_shard"
+    }
+  },
+  "pattern": [
+    "@@@",
+    " ! ",
+    " ! "
+  ],
+  "result": {
+    "item": "ex_portals:rift_pickaxe"
+  }
+}

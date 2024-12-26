@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "ex_portals:stable_portal_transm"
+    },
+    {
+      "item": "ex_portals:stable_portal_transm"
+    },
+    {
+      "item": "ex_portals:stable_portal_transm"
+    },
+    {
+      "item": "ex_portals:stable_portal_transm"
+    },
+    {
+      "item": "ex_portals:stable_portal_transm"
+    },
+    {
+      "item": "ex_portals:stable_portal_transm"
+    },
+    {
+      "item": "ex_portals:stable_portal_transm"
+    },
+    {
+      "item": "ex_portals:stable_portal_transm"
+    },
+    {
+      "item": "ex_portals:stable_portal_transm"
+    }
+  ],
+  "result": {
+    "item": "ex_portals:rift_shard"
+  }
+}

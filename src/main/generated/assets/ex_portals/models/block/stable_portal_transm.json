@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "ex_portals:block/stable_portal_transm"
+  }
+}

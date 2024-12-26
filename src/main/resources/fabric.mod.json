@@ -20,6 +20,9 @@
     "main": [
       "org.kp.ex_portals.Ex_portals"
     ],
+    "fabric-datagen": [
+      "org.kp.ex_portals.Ex_portalsDataGeneration"
+    ],
     "terrablender": [
       "org.kp.ex_portals.worldgen.biomes.biomeRegistration"
     ]

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ex_portals:item/bucket_of_unstable_portal_transm"
+  }
+}

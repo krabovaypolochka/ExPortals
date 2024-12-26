@@ -1,0 +1,4 @@
+// 1.20.4	2024-12-26T11:28:39.8149831	Ex_portals/Tags for minecraft:block
+c2b3f3d5852e67f2c28980f959c0870cb96b7aa8 data\minecraft\tags\blocks\mineable\axe.json
+158b70c58dfe26c3c7b84db69da68c5c952cbc5c data\minecraft\tags\blocks\needs_iron_tool.json
+13f867b64009a06dce578b80d455009703476fb6 data\minecraft\tags\blocks\needs_stone_tool.json
